@@ -1,9 +1,9 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 const links = [
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "LinkedIn", href: "https://linkedin.com/" },
-  { label: "Blog", href: "https://example.com/" },
+  { id: "github", label: "GitHub", href: "https://github.com/" },
+  { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/" },
+  { id: "blog", label: "Blog", href: "https://example.com/" },
 ];
 
 export default function Home() {
@@ -25,11 +25,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-4">
-          {links.map((link) => (
-            <LinkCard key={link.label} label={link.label} href={link.href} />
-          ))}
-        </div>
+        <LinkList links={links} />
       </main>
     </div>
   );
